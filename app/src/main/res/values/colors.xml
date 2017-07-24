@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black_text">#000000</color>
+    <color name="green_text">#129334</color>
+    <color name="green">#066b20</color>
+    <color name="double_green_text">#057c13</color>
+    <color name="pink_text">#e2bfaf</color>
+    <color name="grey_text">#5c5c5c</color>
+    <color name="friend_normal">#fff</color>
+    <color name="friend_press">#dcd8d8</color>
+
+    <color name="send_nomal">#eee</color>
+    <color name="send_blue">#e4eaea</color>
+
+
+    <color name="bg_tab_pressed">#71e5f4</color>
+    <color name="tab_text_color_selected">#22ed66</color> <!-- 选中文字颜色 -->
+    <color name="tab_text_color_normal">#615e5e</color> <!-- 未选中文字颜色 -->
+</resources>

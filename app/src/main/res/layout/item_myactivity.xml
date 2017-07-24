@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+                android:src="@drawable/subject_default" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="15"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title_myactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="秒速app背景之夏-2015年应用开发者交流活动"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_time_myactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="2017-07-23 22:16:30"
+                android:textColor="#d6d3d3"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_space_myactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="国际会议中心凯迪克北京格兰云天大酒店1号会议室"
+                android:textColor="#d6d3d3"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:background="#d6d3d3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

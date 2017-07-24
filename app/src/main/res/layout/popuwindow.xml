@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:text="文字"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/quick_option_text_nor"
+            android:textColor="#000"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_camera"
+            android:text="相册"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/quick_option_album_nor"
+            android:textColor="#000"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_photos"
+            android:text="拍照"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/quick_option_photo_nor"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <ImageView
+     android:layout_marginTop="20dp"
+       android:layout_gravity="center_horizontal"
+        android:id="@+id/iv_delete"
+        android:src="@drawable/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

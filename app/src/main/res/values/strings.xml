@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyOsChina</string>
+    <string-array name="tab_names">
+        <item>软件</item>
+        <item>问答</item>
+        <item>博客</item>
+        <item>咨询</item>
+    </string-array>
+
+</resources>

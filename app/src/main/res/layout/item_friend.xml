@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image_friend"
+                android:layout_width="65dp"
+                android:layout_height="48dp"
+                android:src="@drawable/widget_bar_me_nor"
+                app:civ_border_color="#d1cfcf"
+                app:civ_border_width="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_author_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="itheima"
+                android:textColor="#407fe4" />
+
+
+            <TextView
+                android:id="@+id/tv_message_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="maven 仓库什么时候搞好哦 现在没有可以用的了 太慢了"
+                android:textColor="#0e0e0e"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:id="@+id/tv_time_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-07-22"
+            android:textColor="#a6a7a9"
+            android:textSize="10sp" />
+    <View
+        android:layout_marginTop="5dp"
+        android:background="#d3d5d7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

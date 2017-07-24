@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.asdf.myoschina">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+
+    <application
+        android:name=".global.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyPageIndicatorDefaults">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/MyPageIndicatorDefaults"
+            >
+        </activity>
+        <activity
+            android:name=".activity.SpalshActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".activity.UrlPortActivity" />
+        <activity android:name=".activity.EditActivity" />
+        <activity android:name=".activity.SearchPagerActivity" />
+        <activity android:name="convery.activity.ShakeActivity"/>
+        <activity android:name="comprehensive.activity.DetailPagerActivity"/>
+        <activity android:name="move.activity.MoveDetailActivity"/>
+        <activity android:name="convery.activity.FriendActivity"/>
+        <activity android:name="convery.activity.FindFriendActivity"/>
+        <activity android:name="convery.activity.UserActivity"/>
+        <activity android:name="convery.activity.MyActivity"/>
+        <activity android:name="convery.activity.NewActivity"/>
+        <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity"/>
+
+    </application>
+</manifest>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <TextView
+       android:text="是否保存为草稿"
+       android:textSize="16sp"
+       android:textColor="#000"
+       android:paddingBottom="20dp"
+       android:paddingTop="20dp"
+       android:layout_marginLeft="20dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+    <View
+        android:background="#c1bebe"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="取消"
+            android:textColor="#000"
+            android:id="@+id/btn_cancel"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="#c1bebe"
+            android:layout_width="2dp"
+            android:layout_height="40dp"/>
+        <Button
+            android:textColor="#000"
+            android:text="确定"
+            android:id="@+id/btn_confirm"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</LinearLayout>

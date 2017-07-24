@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tv_title_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="笑晕！小伙鬼屋里牵着'鬼'跑以为是妹妹"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_content_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你是傻逼吗？喔，是的你是傻逼吗？喔，是的你是傻逼吗？喔，是的"
+        android:textColor="#b6b3b3"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_author_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张三"
+            android:layout_marginRight="20dp"
+            android:textColor="#737171"
+            android:textSize="12sp" />
+
+        <TextView
+            android:drawableLeft="@drawable/ic_time"
+            android:drawablePadding="3dp"
+            android:id="@+id/tv_time_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2017-07-12 22：12"
+            android:textColor="#737171"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:background="#cfcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+</LinearLayout>
