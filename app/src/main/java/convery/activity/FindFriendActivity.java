@@ -1,7 +1,9 @@
 package convery.activity;
 
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +39,9 @@ public class FindFriendActivity extends FragmentActivity {
     private ImageView search_delete;
     private EditText edt_search;
     private SharedPreferences.Editor edit;
+    private SharedPreferences sp;
+    private String  content;
+    private FindFriendFragment friendFragment;
 
 
     @Override
@@ -53,14 +58,13 @@ public class FindFriendActivity extends FragmentActivity {
                 finish();
             }
         });
-        SharedPreferences sp = getSharedPreferences("find_content", MODE_PRIVATE);
+         sp = getSharedPreferences("find_content", MODE_PRIVATE);
          edit = sp.edit();
 
        //搜索框的监听
         edt_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -70,13 +74,16 @@ public class FindFriendActivity extends FragmentActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                final String content = edt_search.getText().toString().trim();
+                content = edt_search.getText().toString().trim();
                 if (!content.equals("") && content != null) {
+                    search_delete.setVisibility(View.VISIBLE);
                     RequestQueue requestQueue = Volley.newRequestQueue(UIUtils.getContext());
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://www.oschina.net/action/api/find_user?name="+content, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String s) {
                             edit.putString("content",s).commit();
+                            System.out.println("------content"+content);
+
                         }
                     }, new Response.ErrorListener() {
                         @Override
@@ -87,10 +94,9 @@ public class FindFriendActivity extends FragmentActivity {
                     requestQueue.add(stringRequest);
                     FragmentManager fm = getSupportFragmentManager();
                     FragmentTransaction transaction = fm.beginTransaction();
-                    FindFriendFragment friendFragment = new FindFriendFragment();
+                    friendFragment = new FindFriendFragment();
                     transaction.replace(R.id.fl_friend,friendFragment).commit();
-                    search_delete.setVisibility(View.VISIBLE);
-                } else {
+                } else{
                     search_delete.setVisibility(View.GONE);
                 }
             }

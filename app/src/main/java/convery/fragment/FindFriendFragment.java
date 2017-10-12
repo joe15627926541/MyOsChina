@@ -3,10 +3,17 @@ package convery.fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.asdf.myoschina.R;
 import com.example.asdf.myoschina.adapter.MyBaseAdapter;
 import com.example.asdf.myoschina.fragment.BaseFragment;
 import com.example.asdf.myoschina.holder.BaseHolder;
@@ -22,6 +29,7 @@ import convery.activity.UserActivity;
 import convery.domain.FindFriendInfo;
 import convery.holder.FindHolder;
 import convery.xmlParse.FriendXmlParser;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by ba0ch3ng on 2017/7/23.
@@ -42,7 +50,6 @@ public class FindFriendFragment extends BaseFragment {
                 FindFriendInfo findFriendInfo = findfriendinfos.get(position);
                 intent.putExtra("Info",findFriendInfo);
                 startActivity(intent);
-
             }
         });
 
@@ -51,11 +58,11 @@ public class FindFriendFragment extends BaseFragment {
 
     @Override
     public LoadingPage.ResultState onLoad() {
+        SystemClock.sleep(2000);
         SharedPreferences sp = UIUtils.getContext().getSharedPreferences("find_content", UIUtils.getContext().MODE_PRIVATE);
         final String content = sp.getString("content", "");
         InputStream is = new ByteArrayInputStream(content.getBytes());
         findfriendinfos = FriendXmlParser.XmlfriendParser(is);
-        SystemClock.sleep(100);
         return check(findfriendinfos);
     }
 
@@ -71,10 +78,9 @@ public class FindFriendFragment extends BaseFragment {
 
         @Override
         public ArrayList<FindFriendInfo> onLoadMore() {
-
-
             return null;
         }
 
     }
+
 }

@@ -63,9 +63,9 @@ public class RecentMoveHolder extends BaseHolder<recentmoveInfo> {
                   isTure=true;
                   iv_like.setImageResource(R.drawable.ic_likeed);
                   AnimatorSet animatorSet = new AnimatorSet();//组合动画
-                  ObjectAnimator animatorX = ObjectAnimator.ofFloat(iv_like, "scaleX", 1, 2, 1);
-                  ObjectAnimator animatorY = ObjectAnimator.ofFloat(iv_like, "scaleY", 1, 2, 1);
-                  animatorSet.setDuration(2000);
+                  ObjectAnimator animatorX = ObjectAnimator.ofFloat(iv_like, "scaleX", 1, 1.1f, 1);
+                  ObjectAnimator animatorY = ObjectAnimator.ofFloat(iv_like, "scaleY", 1, 1.1f, 1);
+                  animatorSet.setDuration(1000);
                   animatorSet.play(animatorX).with(animatorY);//两个动画同时开始
                   animatorSet.start();
                   if(likeCount>0){

@@ -1,5 +1,7 @@
 package comprehensive.holder;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
@@ -7,8 +9,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.asdf.myoschina.R;
+import com.example.asdf.myoschina.db.DbHelper;
 import com.example.asdf.myoschina.holder.BaseHolder;
 import com.example.asdf.myoschina.util.UIUtils;
+
+import java.util.ArrayList;
 
 import comprehensive.domain.newsInfo;
 
@@ -25,6 +30,8 @@ public class BlogHolder extends BaseHolder<newsInfo> {
     private ImageView iv_clock;
     private ImageView iv_icon;
     private ImageView iv_today;
+    private DbHelper helper;
+    private SQLiteDatabase db;
 
 
 
@@ -39,12 +46,24 @@ public class BlogHolder extends BaseHolder<newsInfo> {
         iv_clock=(ImageView)inflate.findViewById(R.id.iv_clock);
         iv_icon=(ImageView)inflate.findViewById(R.id.iv_icon);
         iv_today=(ImageView)inflate.findViewById(R.id.iv_today);
+        helper = new DbHelper(UIUtils.getContext());
+        db = helper.getWritableDatabase();
         return inflate;
     }
 
     @Override
     public void refreshView(newsInfo data) {
+        title.setTextColor(Color.BLACK);
+        ArrayList<Integer> list = helper.query(db);
         if(data!=null){
+            if(list.size()>0){
+                for(int i=0;i<list.size();i++){
+                    int id=list.get(i);
+                    if(data.getId()==id){
+                        title.setTextColor(Color.GRAY);
+                    }
+                }
+            }
             title.setText(data.title);
             content.setText(data.body);
             author.setText(data.author);

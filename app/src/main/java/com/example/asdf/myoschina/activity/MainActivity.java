@@ -1,6 +1,9 @@
 package com.example.asdf.myoschina.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -124,6 +127,14 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         init();
         OnClickListener();
+        Intent intert=getIntent();
+        int id = intert.getIntExtra("convery",-1);
+        if(id>0){
+            System.out.println("aaa"+id);
+            if(id==1){
+                transaction.replace(R.id.fl_content, conVeryFragment); //这里是指定跳转到指定的fragment
+            }
+        }
 
     }
 

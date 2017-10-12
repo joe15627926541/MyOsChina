@@ -1,6 +1,7 @@
 package com.example.asdf.myoschina.adapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,10 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 	private ArrayList<T> list;
 
 	private boolean isLoadMore = false;// 标记当前是否正在加载更多
+
+
+	//定义hashMap 用来存放之前创建的每一项item
+	HashMap<Integer, View> lmap = new HashMap<Integer, View>();
 
 	public MyBaseAdapter(ArrayList<T> list) {
 		this.list = list;
@@ -83,13 +88,14 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 				// 因为所有界面加载更多的UI显示效果都是一致的,所以加载更多的业务逻辑可以做详细处理
 				holder = new MoreHolder(hasMore());
 			} else {
+				//TODO
 				// 在初始化holder的同时,已经对布局进行了加载,也给view设置了tag
-				holder = getHolder(position);
-
+					holder = getHolder(position);
 			}
 		} else {
 			holder = (BaseHolder) convertView.getTag();
 		}
+
 
 		if (getItemViewType(position) != ITEM_LORD_MORE) {
 			// 刷新界面,更新数据

@@ -13,6 +13,7 @@ public class newsInfo implements Serializable {
     public String author;
     public int commentCount;
     private int documentType;
+    private int id;
 
     public int getDocumentType() {
         return documentType;
@@ -60,5 +61,13 @@ public class newsInfo implements Serializable {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

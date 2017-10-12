@@ -1,6 +1,7 @@
 package comprehensive.fragment;
 
 import android.os.SystemClock;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -45,7 +46,12 @@ public class BlogDetailFragment extends BaseFragment {
         settings.setSavePassword(true);
         settings.setSaveFormData(true);
         settings.setJavaScriptEnabled(true);
-
+        settings.setSupportZoom(true);
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        if (dm.densityDpi > 240 ) {
+            settings.setDefaultFontSize(40); //可以取1-72之间的任意值，默认16
+        }
 
         webView.loadDataWithBaseURL(null, mList.get(0).body, "text/html", "utf-8", null);
         return webView;

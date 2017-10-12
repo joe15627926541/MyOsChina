@@ -36,7 +36,6 @@ public class NewsProtocol extends BaseProtocol<ArrayList<newsInfo>> {
 
     @Override
     public ArrayList<newsInfo> parseJson(String result) {
-//        Toast.makeText(UIUtils.getContext(),"这是咨询的"+result,Toast.LENGTH_LONG).show();
         ArrayList<newsInfo> newsInfos = null;
         InputStream is = new ByteArrayInputStream(result.getBytes());
         newsInfos =  NewsXmlParser.xmlParser(is);

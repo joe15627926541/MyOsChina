@@ -35,22 +35,6 @@ public class SoftwareFragment extends BaseFragment {
             System.out.println("-----adapter");
         }
 
-//            myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    if(mList!=null&&mList.size()>0){
-//                        Intent intent = new Intent();
-//                        intent.setAction("android.intent.action.VIEW");
-//                        Uri content_url = Uri.parse(userBeanList.get(position).getDetailUrl());
-//                        intent.setData(content_url);
-//                        startActivity(intent);
-//                    }else{
-//                        return;
-//                    }
-//
-//                }
-//            });
-
 
         return myListView;
 

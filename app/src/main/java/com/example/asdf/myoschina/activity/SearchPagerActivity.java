@@ -171,10 +171,10 @@ public class SearchPagerActivity extends BaseActivity {
                 PagerPosition=position;
                 fragment = NullFragments.get(position);
                 if (!TextUtils.isEmpty(SearchContent)) {
-                        edit.putBoolean("IsDefault", false);
-                        edit.putString("content", SearchContent);
-                        edit.putInt("PagerPosition",PagerPosition);
-                        edit.commit();
+                    edit.putBoolean("IsDefault", false);
+                    edit.putString("content", SearchContent);
+                    edit.putInt("PagerPosition",PagerPosition);
+                    edit.commit();
                 }
 
             }

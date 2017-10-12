@@ -34,6 +34,14 @@ public class NewsXmlParser {
                         if ("news".equals(parser.getName())) {
                             newsInfo = new newsInfo();
                         }
+                        if ("id".equals(parser.getName())) {
+                            String id = parser.nextText();
+                            if (null != id) {
+                                newsInfo.setId(Integer.parseInt(id));
+                            }
+
+                        }
+
                         if ("title".equals(parser.getName())) {
                             String title = parser.nextText();
                             if (null != title) {

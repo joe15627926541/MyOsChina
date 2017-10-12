@@ -1,6 +1,7 @@
 package convery.fragment;
 
 import android.os.SystemClock;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -33,17 +34,24 @@ public class ActivityDetailFragment extends BaseFragment {
     ArrayList<ActivityDetailInfo> mList = null;
     @Override
     public View onCreateSuccessView() {
-        WebView webView = new WebView(UIUtils.getContext());
+
+        WebView webView = new WebView(getActivity());
         //设置webview的属性
         WebSettings settings = webView.getSettings();
         settings.setBuiltInZoomControls(true);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
-        settings.setSavePassword(true);
         settings.setSaveFormData(true);
         settings.setJavaScriptEnabled(true);
-        webView.loadDataWithBaseURL(null, mList.get(0).body, "text/html", "utf-8", null);
+        settings.setSupportZoom(true);
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        Toast.makeText(getActivity(),dm.densityDpi+"--------",Toast.LENGTH_LONG).show();
+        if (dm.densityDpi > 240 ) {
+            settings.setDefaultFontSize(40); //可以取1-72之间的任意值，默认16
+        }
+        webView.loadDataWithBaseURL("", mList.get(0).body, "text/html", "utf-8", "");
         return webView;
     }
 

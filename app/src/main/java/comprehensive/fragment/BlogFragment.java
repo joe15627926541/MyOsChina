@@ -1,12 +1,14 @@
 package comprehensive.fragment;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.example.asdf.myoschina.activity.MainActivity;
 import com.example.asdf.myoschina.adapter.MyBaseAdapter;
+import com.example.asdf.myoschina.db.DbHelper;
 import com.example.asdf.myoschina.fragment.BaseFragment;
 import com.example.asdf.myoschina.holder.BaseHolder;
 import com.example.asdf.myoschina.util.UIUtils;
@@ -30,8 +32,13 @@ public class BlogFragment extends BaseFragment {
     private ArrayList<newsInfo> moreData;
     private MyListView myListView;
 
+    private DbHelper helper;
+    private SQLiteDatabase db;
+    private ComPreHensiveAdapter comPreHensiveAdapter;
     @Override
     public View onCreateSuccessView() {
+        helper = new DbHelper(getActivity());
+        db = helper.getWritableDatabase();
         if (myListView == null) {
             myListView = new MyListView(UIUtils.getContext());
         } else {
@@ -41,16 +48,19 @@ public class BlogFragment extends BaseFragment {
                 parent.removeView(myListView);
             }
         }
-        myListView.setAdapter(new ComPreHensiveAdapter(mList));
+        comPreHensiveAdapter=new ComPreHensiveAdapter(mList);
+        myListView.setAdapter(comPreHensiveAdapter);
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                helper.add(mList.get(position).getId(),db);
                 Intent intent = new Intent((MainActivity)getActivity(),DetailPagerActivity.class);
                 intent.putExtra("position",position);
                 intent.putExtra("Info",mList.get(position%20));
                 intent.putExtra("type", constansts.BLOGTYPE);
                 intent.putExtra("Isshake",false);
                 startActivity(intent);
+                comPreHensiveAdapter.notifyDataSetChanged();
             }
         });
         return myListView;
@@ -60,7 +70,6 @@ public class BlogFragment extends BaseFragment {
     public ResultState onLoad() {
         BlogProtocol protocol = new BlogProtocol();
         mList= protocol.getData(0);
-
         return check(mList);
 
     }

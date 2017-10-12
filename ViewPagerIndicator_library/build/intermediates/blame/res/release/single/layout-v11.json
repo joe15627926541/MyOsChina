@@ -1,26 +1,50 @@
 [
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_template_big_media.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_template_big_media_narrow.xml"
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_media_cancel_action.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_media_action.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_media_action.xml"
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/Users/ba0ch3ng/Desktop/MyOsChina/ViewPagerIndicator_library/build/intermediates/res/merged/release/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/Users/ba0ch3ng/.android/build-cache/91913b81d78c27f27abb646f8c7affed298b2313/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\ba0ch3ng\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\ba0ch3ng\\.android\\build-cache\\91913b81d78c27f27abb646f8c7affed298b2313\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\MyOsChina\\ViewPagerIndicator_library\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\9f77454a4d83f7b2cafb77e932025170cbdbb7d5\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     }
 ]
