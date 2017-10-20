@@ -35,6 +35,12 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("id",id);
         db.insert("info",null,values);
     }
+    //删除数据
+    public void delete(int id,SQLiteDatabase db) {
+        db.execSQL("delete from info where id=?", new Object[] { id });
+    }
+
+
 
     //查询所有的数据的方法
 
@@ -50,14 +56,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 //获取数据
                 int id = cursor.getInt(0);
                 list.add(id);
-
-
             }
-//            cursor.close();//关闭结果集
-
         }
-        //关闭数据库对象
-//        db.close();
         return list;
     }
 

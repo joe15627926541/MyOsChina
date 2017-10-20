@@ -38,6 +38,14 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+import cn.sharesdk.onekeyshare.ShareContentCustomizeCallback;
+import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.tencent.qq.QQ;
+import cn.sharesdk.wechat.friends.Wechat;
+import cn.sharesdk.wechat.moments.WechatMoments;
 import comprehensive.domain.newsInfo;
 import comprehensive.fragment.BlogDetailFragment;
 import comprehensive.fragment.HotDetailFragment;
@@ -214,11 +222,11 @@ public class DetailPagerActivity extends FragmentActivity {
                 Toast.makeText(getApplicationContext(), "用户未登陆", Toast.LENGTH_SHORT).show();
             }
         });
-        //默认展示的发送
+        //一键分享
         iv_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showShare();
             }
         });
         //删除表情
@@ -641,5 +649,34 @@ public class DetailPagerActivity extends FragmentActivity {
      */
     private int getEditTextCursorIndex(EditText mEditText) {
         return mEditText.getSelectionStart();
+    }
+    //一键分享的方法
+    private void showShare() {
+        ShareSDK.initSDK(this);
+        OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+    // 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
+        //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
+        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+        oks.setTitle("分享标题");
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText("我是分享文本，啦啦啦~http://baidu.com/");
+        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+//        oks.setImagePath("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3843794586,3401769359&fm=27&gp=0.jpg");
+        // url仅在微信（包括好友和朋友圈）中使用
+        oks.setUrl("http://sharesdk.cn");
+        // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+        oks.setComment("我是测试评论文本");
+        // site是分享此内容的网站名称，仅在QQ空间使用
+        oks.setSite(getString(R.string.app_name));
+        // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+        oks.setSiteUrl("http://sharesdk.cn");
+
+        // Url：仅在QQ空间使用
+        oks.setTitleUrl("http://www.itheima.com/special/hmjavaeezly/?jingjia-heima-Java-xin-pc-heimachengxuyuanjavapeixun");  //网友点进链接后，可以看到分享的详情
+         // 启动分享GUI
+        oks.show(this);
     }
 }

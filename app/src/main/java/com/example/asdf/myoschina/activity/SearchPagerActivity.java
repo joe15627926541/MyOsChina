@@ -89,9 +89,12 @@ public class SearchPagerActivity extends BaseActivity {
                 } else {
                     search_delete.setVisibility(View.GONE);
                 }
+
+
+
             }
         });
-        search_delete.setOnClickListener(new View.OnClickListener() {
+         search_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 edt_search.setText("");
@@ -104,19 +107,15 @@ public class SearchPagerActivity extends BaseActivity {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    Toast.makeText(getApplication(),":点击了完成，并收起了输入面板",Toast.LENGTH_LONG).show();
                     String SearchContent = edt_search.getText().toString().trim();
                     if (!TextUtils.isEmpty(SearchContent)) {
-                        if (!TextUtils.isEmpty(SearchContent)) {
-
                             edit.putBoolean("IsDefault", false);
                             edit.putString("content", SearchContent);
                             edit.putInt("PagerPosition",PagerPosition);
                             edit.commit();
                             fragment = NullFragments.get(PagerPosition);
-                            System.out.println("-----点击请求数据1");
                             fragment.loadData();
-                            System.out.println("-----点击请求数据2");
-                        }
 
                     } else {
                         Toast.makeText(getApplicationContext(), "请输入搜索内容", Toast.LENGTH_SHORT).show();
@@ -169,13 +168,13 @@ public class SearchPagerActivity extends BaseActivity {
             public void onPageSelected(int position) {
                 String SearchContent = edt_search.getText().toString().trim();
                 PagerPosition=position;
-                fragment = NullFragments.get(position);
                 if (!TextUtils.isEmpty(SearchContent)) {
                     edit.putBoolean("IsDefault", false);
                     edit.putString("content", SearchContent);
                     edit.putInt("PagerPosition",PagerPosition);
                     edit.commit();
                 }
+
 
             }
 
@@ -205,7 +204,6 @@ public class SearchPagerActivity extends BaseActivity {
         // 此方法类似instantiateItem
         @Override
         public Fragment getItem(int position) {
-            //根据输入框是否为空来判断加载那个fragment的集合
             return NullFragments.get(position);
         }
 

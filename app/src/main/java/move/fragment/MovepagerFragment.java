@@ -49,7 +49,7 @@ public class MovepagerFragment extends BaseFragment {
     private TextView tv_author_detail;
     private TextView tv_time_detail;
     private TextView tv_content_move;
-    private ImageView iv_like_detail;
+//    private ImageView iv_like_detail;
     private TextView tv_count_detail;
     private LinearLayout ll_comment_detail;
     private TextView tv_like_detail;
@@ -59,6 +59,8 @@ public class MovepagerFragment extends BaseFragment {
     private boolean isTure;
     private String[]str={"joe,","helena,","john"};
     private Receiver receiver;
+
+
     @Override
     public View onCreateSuccessView() {
         View inflate = UIUtils.inflate(R.layout.fragment_detail);
@@ -66,7 +68,7 @@ public class MovepagerFragment extends BaseFragment {
         tv_author_detail = (TextView) inflate.findViewById(R.id.tv_author_detail);
         tv_time_detail = (TextView) inflate.findViewById(R.id.tv_time_detail);
         tv_content_move = (TextView) inflate.findViewById(R.id.tv_content_move);
-        iv_like_detail = (ImageView) inflate.findViewById(R.id.iv_like_detail);
+//        iv_like_detail = (ImageView) inflate.findViewById(R.id.iv_like_detail);
         tv_count_detail = (TextView) inflate.findViewById(R.id.tv_count_detail);
         ll_comment_detail = (LinearLayout) inflate.findViewById(R.id.ll_comment_detail);
         tv_like_detail = (TextView) inflate.findViewById(R.id.tv_like_detail);
@@ -80,41 +82,44 @@ public class MovepagerFragment extends BaseFragment {
         tv_count_detail.setText(detailMoveInfo.getCommentCount() + "");
         ll_load.setVisibility(View.VISIBLE);
 
+
         receiver=new Receiver();
         IntentFilter intentfilter=new IntentFilter();
         intentfilter.addAction("BROADCAST_ACTION");
         UIUtils.getContext().registerReceiver(receiver,intentfilter);
-
-        iv_like_detail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isTure){
-                    isTure=false;
-                    iv_like_detail.setImageResource(R.drawable.ic_unlike);
-                    if(detailMoveInfo.getLikeCount()>0){
-                        tv_like_detail.setText(str[0] + str[1] + str[2]);
-                    }else{
-                        ll_comment_detail.setVisibility(View.GONE);
-                    }
-                }else{
-                    isTure=true;
-                    iv_like_detail.setImageResource(R.drawable.ic_likeed);
-                    AnimatorSet animatorSet = new AnimatorSet();//组合动画
-                    ObjectAnimator animatorX = ObjectAnimator.ofFloat(iv_like_detail, "scaleX", 1, 2, 1);
-                    ObjectAnimator animatorY = ObjectAnimator.ofFloat(iv_like_detail, "scaleY", 1, 2, 1);
-                    animatorSet.setDuration(2000);
-                    animatorSet.play(animatorX).with(animatorY);//两个动画同时开始
-                    animatorSet.start();
-                    ll_comment_detail.setVisibility(View.VISIBLE);
-                    if(detailMoveInfo.getLikeCount()>0){
-                        tv_like_detail.setText("joe,"+str[0] + str[1] + str[2]);
-                    }else{
-                        tv_like_detail.setText("joe");
-                    }
-
-                }
-            }
-        });
+//
+//        iv_like_detail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(isTure){
+//                    isTure=false;
+//                    iv_like_detail.setImageResource(R.drawable.ic_unlike);
+//                    if(detailMoveInfo.getLikeCount()>0){
+//                        tv_like_detail.setText(str[0] + str[1] + str[2]);
+//                    }else{
+//                        ll_comment_detail.setVisibility(View.GONE);
+//                    }
+//                }else{
+//                    isTure=true;
+//                    iv_like_detail.setImageResource(R.drawable.ic_likeed);
+//                    AnimatorSet animatorSet = new AnimatorSet();//组合动画
+//                    ObjectAnimator animatorX = ObjectAnimator.ofFloat(iv_like_detail, "scaleX", 1, 1.1f, 1);
+//                    ObjectAnimator animatorY = ObjectAnimator.ofFloat(iv_like_detail, "scaleY", 1, 1.1f, 1);
+//                    animatorSet.setDuration(2000);
+//                    animatorSet.play(animatorX).with(animatorY);//两个动画同时开始
+//                    animatorSet.start();
+//                    ll_comment_detail.setVisibility(View.VISIBLE);
+//                    if(detailMoveInfo.getLikeCount()>0){
+//                        tv_like_detail.setText("joe,"+str[0] + str[1] + str[2]);
+//                    }else{
+//                        tv_like_detail.setText("joe");
+//                    }
+//
+//                }
+//
+//
+//            }
+//        });
 
         //请求评论的数据
         FragmentManager fm= getActivity().getSupportFragmentManager();
@@ -161,6 +166,10 @@ public class MovepagerFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        UIUtils.getContext().unregisterReceiver(receiver);
+        if(receiver!=null){
+            UIUtils.getContext().unregisterReceiver(receiver);
+        }
     }
+
+
 }

@@ -14,6 +14,15 @@ public class recentmoveInfo implements Serializable {
     public int commentCount;
     public int likeCount;
     public String portrait;
+    public int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPortrait() {
         return portrait;

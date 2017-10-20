@@ -178,6 +178,7 @@ public class EditActivity extends Activity implements View.OnClickListener {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.data");
         registerReceiver(myrecevice, intentFilter);
+
     }
 
 

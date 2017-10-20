@@ -1,1 +1,1 @@
-include ':app', ':myapplication', ':myapplication2', ':ViewPagerIndicator_library', ':myapplication3', ':myapplication4', ':libzxing'
+include ':app', ':myapplication', ':myapplication2', ':ViewPagerIndicator_library', ':myapplication3', ':myapplication4', ':libzxing', ':PushSDK'

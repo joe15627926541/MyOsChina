@@ -2,12 +2,10 @@ package comprehensive.holder;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.asdf.myoschina.R;
 import com.example.asdf.myoschina.db.DbHelper;
 import com.example.asdf.myoschina.holder.BaseHolder;
@@ -48,6 +46,7 @@ public class BlogHolder extends BaseHolder<newsInfo> {
         iv_today=(ImageView)inflate.findViewById(R.id.iv_today);
         helper = new DbHelper(UIUtils.getContext());
         db = helper.getWritableDatabase();
+
         return inflate;
     }
 
@@ -75,7 +74,6 @@ public class BlogHolder extends BaseHolder<newsInfo> {
             }else{
                 iv_today.setImageResource(R.drawable.widget_original_icon);
             }
-
 
         }
     }

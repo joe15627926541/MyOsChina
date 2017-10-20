@@ -1,10 +1,10 @@
 package com.example.asdf.myoschina.fragment;
 
 import android.content.SharedPreferences;
+import android.os.Environment;
 import android.view.View;
 
 import com.example.asdf.myoschina.Protocol.BlogProtocol;
-import com.example.asdf.myoschina.Protocol.SoftWareProtocol;
 import com.example.asdf.myoschina.adapter.MyBaseAdapter;
 import com.example.asdf.myoschina.domain.SoftWareInfo;
 import com.example.asdf.myoschina.holder.BaseHolder;
@@ -28,30 +28,14 @@ public class BlogFragment extends BaseFragment {
 
     @Override
     public View onCreateSuccessView() {
-        System.out.println("-----加载成功布局");
         MyListView myListView = new MyListView(UIUtils.getContext());
         if (booleanExtra) {
             myListView.setVisibility(View.GONE);
         } else {
-            System.out.println("-----VISIBLE");
             myListView.setVisibility(View.VISIBLE);
             myListView.setAdapter(new SoftwareAdapter(mList));
-            System.out.println("-----adapter");
-//            myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    if(mList!=null&&mList.size()>0){
-//                        Intent intent = new Intent();
-//                        intent.setAction("android.intent.action.VIEW");
-//                        Uri content_url = Uri.parse(userBeanList.get(position).getDetailUrl());
-//                        intent.setData(content_url);
-//                        startActivity(intent);
-//                    }else{
-//                        return;
-//                    }
-//
-//                }
-//            });
+
+
         }
 
         return myListView;
@@ -67,13 +51,10 @@ public class BlogFragment extends BaseFragment {
        * */
         SharedPreferences sp = UIUtils.getContext().getSharedPreferences("Default", getActivity().MODE_PRIVATE);
         booleanExtra = sp.getBoolean("IsDefault", true);
-        content = sp.getString("content", "毛主席");
-        System.out.println("-----搜索内容"+content);
-        System.out.println("-----"+booleanExtra);
+        content = sp.getString("content", "c语言");
         if (booleanExtra) {
             return ResultState.STATE_SUCCESS;
         } else {
-            System.out.println("-----请求数据");
             BlogProtocol protocol = new BlogProtocol();
             mList= protocol.getData(0);
             return check(mList);

@@ -35,6 +35,13 @@ public class HotMoveXmlParser {
                         if ("tweet".equals(parser.getName())) {
                             recentmoveInfo = new recentmoveInfo();
                         }
+                        if ("id".equals(parser.getName())) {
+                            String id = parser.nextText();
+                            if (null != id) {
+                                recentmoveInfo.setId(Integer.parseInt(id));
+                            }
+
+                        }
 
                         if ("body".equals(parser.getName())) {
                             String body = parser.nextText();

@@ -27,12 +27,12 @@ public class SoftwareFragment extends BaseFragment {
 
     @Override
     public View onCreateSuccessView() {
-        System.out.println("-----加载成功布局");
         MyListView myListView = new MyListView(UIUtils.getContext());
         if (!booleanExtra) {
-            System.out.println("-----VISIBLE"+booleanExtra);
+            System.out.println("++++加载布局"+booleanExtra);
             myListView.setAdapter(new SoftwareAdapter(mList));
-            System.out.println("-----adapter");
+        }else{
+            System.out.println("++++未加载布局"+booleanExtra);
         }
 
 
@@ -49,13 +49,10 @@ public class SoftwareFragment extends BaseFragment {
        * */
         SharedPreferences sp = UIUtils.getContext().getSharedPreferences("Default", UIUtils.getContext().MODE_PRIVATE);
         booleanExtra = sp.getBoolean("IsDefault", true);
-        content = sp.getString("content", "毛主席");
-        System.out.println("-----搜索内容"+content);
-        System.out.println("-----"+booleanExtra);
+        content = sp.getString("content", "c语言");
         if (booleanExtra) {
             return ResultState.STATE_SUCCESS;
         } else {
-            System.out.println("-----请求数据");
             SoftWareProtocol protocol = new SoftWareProtocol();
             mList= protocol.getData(0);
             return check(mList);

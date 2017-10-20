@@ -1,6 +1,9 @@
 package move.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,13 +30,15 @@ import move.holder.RecentMoveHolder;
 public class RecentMoveFragment extends BaseFragment {
     ArrayList<recentmoveInfo> mList = null;
     private ArrayList<recentmoveInfo> moreData;
+    private RecentMoveAdapter recentMoveAdapter;
 
 
     @Override
     public View onCreateSuccessView() {
-
         MyListView myListView = new MyListView(UIUtils.getContext());
-        RecentMoveAdapter recentMoveAdapter = new RecentMoveAdapter(mList);
+         recentMoveAdapter = new RecentMoveAdapter(mList);
+
+
         myListView.setAdapter(recentMoveAdapter);
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -42,7 +47,6 @@ public class RecentMoveFragment extends BaseFragment {
                 SharedPreferences sp = UIUtils.getContext().getSharedPreferences("Detail", getActivity().MODE_PRIVATE);
                 sp.edit().putInt("DetailPosition",position%20).commit();
                 startActivity(intent);
-
             }
         });
         return myListView;

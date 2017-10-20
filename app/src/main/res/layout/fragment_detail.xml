@@ -72,19 +72,19 @@
                     android:textColor="#bec0c2"
                     android:textSize="10sp" />
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shape_like">
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/shape_like">-->
 
-                    <ImageView
-                        android:id="@+id/iv_like_detail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:padding="2dp"
-                        android:src="@drawable/ic_unlike" />
-                </RelativeLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_like_detail"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerHorizontal="true"-->
+                        <!--android:padding="2dp"-->
+                        <!--android:src="@drawable/ic_unlike" />-->
+                <!--</RelativeLayout>-->
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -178,7 +178,10 @@
      <FrameLayout
          android:id="@+id/fl_detail"
          android:layout_width="match_parent"
-         android:layout_height="match_parent"></FrameLayout>
+         android:layout_height="match_parent"
+         android:layout_alignParentTop="true"
+         android:layout_toRightOf="@+id/ll_load"
+         android:layout_toEndOf="@+id/ll_load"></FrameLayout>
 
 
     </RelativeLayout>

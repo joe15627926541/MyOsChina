@@ -28,7 +28,7 @@ public class InformationProtocol extends BaseProtocol<ArrayList<SoftWareInfo>> {
     @Override
     public String getParams() {
         SharedPreferences sp = UIUtils.getContext().getSharedPreferences("Default", UIUtils.getContext().MODE_PRIVATE);
-        String content = sp.getString("content", "毛主席");
+        String content = sp.getString("content", "c语言");
         int position = sp.getInt("PagerPosition", 0);
         String str = null;
         if(position==0){

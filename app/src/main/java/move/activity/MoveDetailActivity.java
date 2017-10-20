@@ -130,7 +130,7 @@ public class MoveDetailActivity extends FragmentActivity {
                     alertDialog.show();
                     Window window = alertDialog.getWindow();
                     WindowManager.LayoutParams lp = window.getAttributes();
-                    lp.alpha = 0.8f;
+                    lp.alpha = 0.5f;
                     window.setAttributes(lp);
                     new Handler().postDelayed(new Runnable() {
                         @Override

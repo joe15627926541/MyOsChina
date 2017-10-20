@@ -40,7 +40,6 @@ public class MyMoveFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(),MoveDetailActivity.class);
-
                 SharedPreferences sp = UIUtils.getContext().getSharedPreferences("Detail", getActivity().MODE_PRIVATE);
                 sp.edit().putInt("DetailPosition",position%20).commit();
                 startActivity(intent);
