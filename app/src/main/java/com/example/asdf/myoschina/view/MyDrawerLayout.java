@@ -9,22 +9,21 @@ import android.view.MotionEvent;
 /**
  * Created by ba0ch3ng on 2017/6/13.
  */
-
-public class MySlidingPaneLayout extends SlidingPaneLayout {
-    public MySlidingPaneLayout(Context context) {
+public class MyDrawerLayout extends android.support.v4.widget.DrawerLayout {
+    public MyDrawerLayout(Context context) {
         super(context);
     }
 
-    public MySlidingPaneLayout(Context context, AttributeSet attrs) {
+    public MyDrawerLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MySlidingPaneLayout(Context context, AttributeSet attrs, int defStyle) {
+    public MyDrawerLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        return false;
+//    }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return false;
-    }
 }

@@ -18,6 +18,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -34,10 +35,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.Volley;
 import com.example.asdf.myoschina.R;
 import com.example.asdf.myoschina.util.util;
-import com.example.asdf.myoschina.view.MySlidingPaneLayout;
+import com.example.asdf.myoschina.view.MyDrawerLayout;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,7 +48,7 @@ import me.fragment.MeFragment;
 import move.fragment.MoveFragment;
 
 public class MainActivity extends FragmentActivity {
-    private MySlidingPaneLayout slidingpanelayout;
+    private MyDrawerLayout slidingpanelayout;
     private RadioGroup radiogroup;
     private RadioButton add;
 
@@ -148,11 +148,14 @@ public class MainActivity extends FragmentActivity {
         toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (slidingpanelayout.isOpen()) {
-                    slidingpanelayout.closePane();
-                } else {
-                    slidingpanelayout.openPane();
+
+                if(slidingpanelayout.isDrawerOpen(Gravity.LEFT)){
+                    slidingpanelayout.closeDrawer(Gravity.LEFT);
+                }else{
+                    slidingpanelayout.openDrawer(Gravity.LEFT);
                 }
+
+
 
 
             }
@@ -298,7 +301,7 @@ public class MainActivity extends FragmentActivity {
         tv_exit = (TextView) findViewById(R.id.tv_exit);
         toggle = (TextView) findViewById(R.id.toggle);
         tv_search = (TextView) findViewById(R.id.tv_search);
-        slidingpanelayout = (MySlidingPaneLayout) findViewById(R.id.slidingpanelayout);
+        slidingpanelayout = (MyDrawerLayout) findViewById(R.id.slidingpanelayout);
         radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
         add = (RadioButton) findViewById(R.id.add);
         iv_add = (ImageView) findViewById(R.id.iv_add);

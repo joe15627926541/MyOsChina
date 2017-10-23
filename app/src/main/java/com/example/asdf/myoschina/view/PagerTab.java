@@ -640,4 +640,9 @@ public class PagerTab extends ViewGroup {
 
 		public int getPageSelectedIconResId();
 	}
+
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		return super.dispatchTouchEvent(ev);
+	}
 }
